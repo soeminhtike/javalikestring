@@ -69,3 +69,5 @@ String operator+(int number, String str){
 	temp.length = str.length+counter+1;
 	return temp;
 }
+
+test
