@@ -24,3 +24,8 @@ public :
 	String subString(int startIndex, int endIndex);
 	char charAt(int index);
 };
+<<<<<<< HEAD
+=======
+
+test
+>>>>>>> origin
