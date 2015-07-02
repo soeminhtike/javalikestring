@@ -1,11 +1,13 @@
+#include <iostream>
 #include "String.h"
 
-String::String(){
-
-}
+String::String(){}
 
 String::String(const char* ch){
 	this->ch = ch;
+	int length = 0;
+	while(ch[length++]!='\0') {}
+	this->length = length-1;
 }
 
 String String::operator+(String str){
@@ -47,6 +49,23 @@ String String::operator+(int number){
 	return temp;
 }
 
+String String::operator+(const char* tempChar){
+	
+	return null;
+}
+
+String String::operator+(char tempChar){
+	String temp;
+	char *ch = new char[this->length+1];
+	for(int i = 0; i < this->length; i++){
+		ch[i] = this->ch[i];
+	}
+	ch[this->length] = tempChar;
+	temp.ch = ch;
+	temp.length = this->length + 1;
+	return temp;
+}
+
 String operator+(int number, String str){
 	String temp;
 	char integerString[20];
@@ -54,7 +73,6 @@ String operator+(int number, String str){
 	while(number>0){
 		int remainder = number % 10;
 		integerString[counter++] = remainder + '0';
-		printf("Remainder : %c \n", remainder +'0');
 		number = number /10;
 	}
 	char *ch = new char[str.length+counter];
@@ -70,4 +88,5 @@ String operator+(int number, String str){
 	return temp;
 }
 
-tesing
+
+
